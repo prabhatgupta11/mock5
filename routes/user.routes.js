@@ -16,9 +16,9 @@ userrouter.post("/signup",async(req,res)=>{
         }
 
          const haspass= await bcrypt.hashSync(payload.password,6)
-         const confirmhaspass= await bcrypt.hashSync(payload.confirmpass,6)
+        //  const confirmhaspass= await bcrypt.hashSync(payload.confirmpass,6)
          payload.password=haspass
-         payload.confirmpass=confirmhaspass
+        //  payload.confirmpass=confirmhaspass
 
          const newuser=new UserModel(payload);
          await newuser.save();
